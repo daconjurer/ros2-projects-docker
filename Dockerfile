@@ -1,4 +1,4 @@
-FROM althack/ros2:iron-dev
+FROM althack/ros2:humble-dev
 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update \
@@ -6,6 +6,7 @@ RUN apt-get update \
    ament-lint \
    ros-$ROS_DISTRO-navigation2 ros-$ROS_DISTRO-example-interfaces \
    ros-$ROS_DISTRO-turtlesim \
+   ros-${ROS_DISTRO}-gazebo-* \
    && apt-get autoremove -y \
    && apt-get clean -y \
    && rm -rf /var/lib/apt/lists/*
